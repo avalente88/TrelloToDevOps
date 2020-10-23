@@ -1,0 +1,11 @@
+C:\TrelloToDevOps\bin\Debug\netcoreapp2.2\TrelloToDevOps.deps.json
+C:\TrelloToDevOps\bin\Debug\netcoreapp2.2\TrelloToDevOps.runtimeconfig.json
+C:\TrelloToDevOps\bin\Debug\netcoreapp2.2\TrelloToDevOps.runtimeconfig.dev.json
+C:\TrelloToDevOps\bin\Debug\netcoreapp2.2\TrelloToDevOps.dll
+C:\TrelloToDevOps\bin\Debug\netcoreapp2.2\TrelloToDevOps.pdb
+C:\TrelloToDevOps\obj\Debug\netcoreapp2.2\TrelloToDevOps.csprojAssemblyReference.cache
+C:\TrelloToDevOps\obj\Debug\netcoreapp2.2\TrelloToDevOps.csproj.CoreCompileInputs.cache
+C:\TrelloToDevOps\obj\Debug\netcoreapp2.2\TrelloToDevOps.AssemblyInfoInputs.cache
+C:\TrelloToDevOps\obj\Debug\netcoreapp2.2\TrelloToDevOps.AssemblyInfo.cs
+C:\TrelloToDevOps\obj\Debug\netcoreapp2.2\TrelloToDevOps.dll
+C:\TrelloToDevOps\obj\Debug\netcoreapp2.2\TrelloToDevOps.pdb
