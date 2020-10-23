@@ -21,7 +21,7 @@ namespace TrelloToDevOps
         public static void ReadEmails(){
 
             //Get TRELLO API Key and Token
-           string myUrl = "https://api.trello.com/1/lists/5f919663accf164e242319c3/cards?key=1446e0ac2e2ce372eff2bbe49a7085b2&token=71aad8c0b929982dd6e53050412afcc4f6acab2b1f329b52a0fd1f47029554ce";
+           string myUrl = "https://api.trello.com/1/lists/{LIST ID}/cards?key={KEY}&token={TOKEN}";
 
            HttpClient client = new HttpClient();
             client.BaseAddress = new Uri(myUrl);
@@ -40,7 +40,7 @@ namespace TrelloToDevOps
 
                 foreach(Root root in roots){
                      CreateIssueTFS(root.name, root.desc);
-                    string myUrlDelete = "https://api.trello.com/1/cards/" + root.id + "?key=1446e0ac2e2ce372eff2bbe49a7085b2&token=71aad8c0b929982dd6e53050412afcc4f6acab2b1f329b52a0fd1f47029554ce";
+                    string myUrlDelete = "https://api.trello.com/1/cards/" + root.id + "?key={KEY}}&token={TOKEN}";
 
                     HttpClient client2 = new HttpClient();
 
@@ -72,7 +72,7 @@ namespace TrelloToDevOps
         public static void CreateIssueTFS(string title, string description)
         {
             //Get DEVOPs pat
-            string pat = "lyqcasf5ggxjptljderuvt54uso75wp3wckg4qinmvtyskd7wcpa";
+            string pat = "{DEV OPS PAT}";
        
 
             var workItemTaskData = new List<dynamic>()
@@ -104,7 +104,7 @@ namespace TrelloToDevOps
                     {
                         op = "add",
                         path = "/fields/System.AssignedTo",
-                        value = "vitor.aires@vinci-energies.net"
+                        value = "{ASSIGNED TO EMAIL}"
                     });
 
             var workItemValue = new StringContent(JsonConvert.SerializeObject(workItemTaskData), Encoding.UTF8, "application/json-patch+json");
@@ -116,7 +116,7 @@ namespace TrelloToDevOps
             Convert.ToBase64String(Encoding.ASCII.GetBytes(string.Format("{0}:{1}", "", pat))));
 
 
-            using (HttpResponseMessage response = client.PostAsync("https://dev.azure.com/Fundos/MAR2020/_apis/wit/workitems/$bug?api-version=6.0", workItemValue).Result)
+            using (HttpResponseMessage response = client.PostAsync("{AZURE DEV OPS URL}/_apis/wit/workitems/$bug?api-version=6.0", workItemValue).Result)
             {
                 response.EnsureSuccessStatusCode();
                 var result = response.Content.ReadAsStringAsync().Result;
